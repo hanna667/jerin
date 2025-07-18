@@ -11,13 +11,23 @@ jobs:
     env:
       address: "karnataka"
     steps:
-      - name: Step 1
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build with Maven
+        run: mvn clean package
+
+      - name: Publish to GitHub Packages
+        run: mvn deploy -s settings.xml
         env:
-         phone: "9072897543"
+          GITHUB_USERNAME: ${{ secrets.USERNAME }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+
+      - name: Verify JAR
+        env:
+          phone: "9072897543"
         run: |
-          echo "the name is $name"
-          echo "the adress is $address"
-          echo "the adress is $phone"
-          echo "GitHub Ref: ${{ github.ref }}"
-          echo "Runner OS: ${{ runner.os }}"
-          echo "job status: ${{ job.status }}"
+          echo "the name is ${{ env.name }}"
+          echo "the address is ${{ env.address }}"
+          echo "the phone is $phone"
+          ls -l target/
