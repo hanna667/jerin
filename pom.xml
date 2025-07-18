@@ -5,7 +5,7 @@
          
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
-  <artifactId>myapp</artifact1.2Id>
+  <artifactId>myapp1.2</artifact1.2Id>
   <version>1.0.0</version>
   <packaging>jar</packaging>
 
@@ -14,7 +14,7 @@
   <distributionManagement>
     <repository>
       <id>user-name</id>
-      <url>https://maven.pkg.github.com/username/RepoName</url>
+      <url>https://maven.pkg.github.com/hanna667/jerin</url>
     </repository>
   </distributionManagement>
 </project>
