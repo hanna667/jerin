@@ -3,7 +3,7 @@ name: Context Demo
 on: push
 
 env:
-  name: "hanna"
+  name: "jerin"
 
 jobs:
   context-info:
@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Step 1
         env:
-         phone: "9072389742"
+         phone: "9072897543"
         run: |
           echo "the name is $name"
           echo "the adress is $address"
